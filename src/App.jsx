@@ -5,6 +5,8 @@ import ContactList from './components/ContactList.jsx'
 import './App.css'
 
 function App() {
+  
+  const [selectedCotactId, setSelectedContactId] = setSelectedContactId(null)
   return (
     <>
     <ContactList />
