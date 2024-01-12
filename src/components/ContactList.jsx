@@ -3,6 +3,7 @@ import { useState } from 'react'
 import {useEffect} from 'react'
 import ContactRow from "./ContactRow"
 import SelectedContact from "./SelectedContact";
+import App from "../App";
 
 const dummyContacts = [
     { id: 1, name: "R2-D2", phone: "222-222-2222", email: "r2d2@droids.com" },
@@ -11,7 +12,7 @@ const dummyContacts = [
   ];
 
 
- export default function ContactList({ setSelectedContactId }) { 
+ export default function ContactList({ selectedContactId,setSelectedContactId }) { 
 
     const [contacts, setContacts] = useState(dummyContacts)
 
@@ -48,6 +49,7 @@ const dummyContacts = [
                 <td>Phone</td>
               </tr>
               {contacts.map((contact) => {
+                
                 return <ContactRow key={contact.id} contact={contact} />;
              })}
             </tbody>
